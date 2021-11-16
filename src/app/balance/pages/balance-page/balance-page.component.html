@@ -1,0 +1,22 @@
+
+    <div class="form-field">
+        <label for="nombre_organizacion">Nombre organizacion</label>
+        <input type="text" id="nombre_organizacion" [formControl]="nombre_organizacion">
+    </div>
+    <div class="form-field">
+        <label for="fecha_balance">Fecha Balance</label>
+        <input type="month" id="fecha_balance" [formControl]="fecha_balance">
+    </div>
+
+
+    <div *ngIf="(store.balance$ | async) as balance">
+       <p>{{balance.cantidadIngresos}} Ingresos: {{balance.totalIngresos}}</p>
+       <p>{{balance.cantidadEgresos}} Egresos: {{balance.totalEgresos}}</p>
+       <p>Saldo: {{balance.saldo}}</p>
+    </div>
+
+
+<app-balance-item-form ></app-balance-item-form>   
+
+
+<app-balance-item-list></app-balance-item-list>

@@ -1,0 +1,41 @@
+<section class="nuevo-evento" >
+    <form [formGroup]="frm">
+        <div class="input-control">
+            <label for="titulo">Titulo</label>
+            <input formControlName="titulo" type="text" id="titulo">
+        </div>
+        <div class="input-control">
+            <label for="descripcion">Descripción</label>
+            <input formControlName="descripcion" type="text" id="descripcion">
+        </div>
+        <div class="input-control">
+            <label for="monto">Monto</label>
+            <input formControlName="monto" type="number" id="monto">
+        </div>
+        <div class="input-control">
+            <label for="fecha">Fecha evento</label>
+            <input formControlName="fecha_evento" type="date" id="fecha">
+        </div>
+        <div class="input-control ">
+            <label for="numdocumento">N° Documento</label>
+            <input formControlName="numero_documento" type="text" id="numdocumento">
+        </div>
+        <div class="input-control radio-control">
+            <label for="ingreso">Ingreso</label>
+            <input formControlName="tipo" type="radio" name="tipo" id="ingreso" value="1">
+
+            <label for="egreso">Egreso</label>
+            <input formControlName="tipo" type="radio" name="tipo" id="egreso" value="0">
+        </div>
+        <div class="input-control radio-control">                
+            <input formControlName="es_donacion" type="checkbox" name="donacion" id="donacion"> 
+            <label for="donacion">es donacion</label>
+        </div>
+        <div class="actions">
+            <p (click)="deleteItem()" [hidden]="esAgregar">Eliminar</p>
+            <button type="button"     [hidden]="esAgregar" (click)="updateItem()" >Guardar</button>
+
+            <button type="button"[hidden]="!esAgregar" (click)="addItem()" >Agregar</button>
+        </div>
+    </form>
+</section>
