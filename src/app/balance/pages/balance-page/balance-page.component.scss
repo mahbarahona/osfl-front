@@ -1,0 +1,72 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    height: 100vh;
+    padding: 1rem;
+
+    min-width: 320px;
+    max-width:425px ;
+}
+
+.header .form-field{
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+}
+
+
+.resumen{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 1rem;
+}
+.tipo-evento{
+    display: flex;
+
+    align-items: center;
+}
+.tipo-evento .detalle{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.tipo-evento .cantidad{
+    padding: 1rem;
+}
+.detalle .monto{
+    font-size: 1rem;
+}
+.detalle .texto{
+    font-size: 0.7rem;
+}
+
+.saldo{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.saldo h1{
+    font-size: 2rem;
+}
+
+
+.list-item{
+    min-height: 10rem;
+    height: 100%;
+    border: 1px solid gray;
+    overflow-y: scroll;
+
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    
+}

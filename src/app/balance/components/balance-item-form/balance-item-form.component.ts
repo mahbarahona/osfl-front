@@ -1,5 +1,6 @@
-import { Component,  OnInit,} from '@angular/core';
+import { Component,  OnDestroy,  OnInit,} from '@angular/core';
 import {  FormBuilder,  FormGroup,  Validators} from '@angular/forms';
+import { Subscription } from 'rxjs';
 
 import { BalanceItem} from '../../models/balance-item.model';
 import {  BalanceStoreService} from '../../store/balance.store';
@@ -9,26 +10,37 @@ import {  BalanceStoreService} from '../../store/balance.store';
   templateUrl: './balance-item-form.component.html',
   styleUrls: ['./balance-item-form.component.scss']
 })
-export class BalanceItemFormComponent implements OnInit {
+export class BalanceItemFormComponent implements OnInit, OnDestroy{
 
   frm: FormGroup = this.fb.group({})
-  esAgregar: boolean = false
+  esAgregar: boolean = true
+  subs$:Subscription = new Subscription
   index:number = -1
 
-  constructor(private fb: FormBuilder, private store: BalanceStoreService) {}
 
+  constructor(private fb: FormBuilder, public store: BalanceStoreService) {}
+  
   ngOnInit(): void {
     
-    this.store.itemActual$
-    .subscribe(data => {
+   this.subs$.add(  
+     this.store.itemActual$
+       .subscribe(data => {
+         
+
       this.frm = this.setForm(data.item)
       this.index = data.index
       this.esAgregar = this.index === -1 ? true : false
-    }
-    )
-    this.frm = this.getInitialForm()
-  }
 
+      console.log({data})
+      console.log({esAgregar:this.esAgregar})
+    }
+    ))
+    // this.frm = this.getInitialForm()
+  }
+  
+  ngOnDestroy(): void {
+    this.subs$?.unsubscribe()
+  }
 
   addItem() {
     if (this.frm.invalid) return
@@ -56,8 +68,8 @@ export class BalanceItemFormComponent implements OnInit {
 
   private getInitialForm() {
     return this.fb.group({
-      titulo: ['compra de bolsas de regalo', Validators.required],
-      descripcion: ['se compran bolsas para evento de navidad', Validators.required],
+      titulo: ['caaa', Validators.required],
+      descripcion: ['sesss ', Validators.required],
       monto: [1000, Validators.required],
       fecha_evento: [new Date(), Validators.required],
       numero_documento: ['111111', Validators.required],

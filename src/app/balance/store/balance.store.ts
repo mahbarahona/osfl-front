@@ -3,8 +3,6 @@ import { BehaviorSubject } from 'rxjs';
 import { BalanceItem } from '../models/balance-item.model';
 import { Balance } from '../models/balance.model';
 
-
-
 @Injectable({
   providedIn: 'root'
 })
@@ -15,6 +13,9 @@ export class BalanceStoreService {
 
   private _itemActualSource = new BehaviorSubject<BalanceItemActual>(new BalanceItemActual)
   public itemActual$ = this._itemActualSource.asObservable()
+  
+  private _showFormSource = new BehaviorSubject<boolean>(false)
+  public showForm$ = this._showFormSource.asObservable()
   
 
   constructor() { }
@@ -39,8 +40,10 @@ export class BalanceStoreService {
     console.log({state:this._balanceSource.getValue()})
 
   }
+  
   //CRUD ITEMS
   addItem(item:BalanceItem){
+    this.resetItemSeleccionado()
     const balance = this._balanceSource.getValue()
     const items = [...balance.items,item]
     const { totalIngresos,totalEgresos,saldo,cantidadIngresos,cantidadEgresos} = this.calcularMontos(items)
@@ -55,8 +58,11 @@ export class BalanceStoreService {
       cantidadIngresos,
       cantidadEgresos
     })
+    this.hideForm()
   }
   updateItem(index:number,newItem:BalanceItem){
+    this.resetItemSeleccionado()
+
     const balance = this._balanceSource.getValue()
     const items = balance.items.map((item, i)=> i === index ? newItem : item)
     const { totalIngresos,totalEgresos,saldo,cantidadIngresos,cantidadEgresos} = this.calcularMontos(items)
@@ -71,11 +77,16 @@ export class BalanceStoreService {
       cantidadIngresos,
       cantidadEgresos
     })
+
+    this.hideForm()
   }
   deleteItem(index:number){
+    this.resetItemSeleccionado()
+
     const balance = this._balanceSource.getValue()
     const items = balance.items.filter( (item, i)=> i !== index)
     const { totalIngresos,totalEgresos,saldo,cantidadIngresos,cantidadEgresos} = this.calcularMontos(items)
+
 
     this._balanceSource.next({
       ...balance,
@@ -86,22 +97,25 @@ export class BalanceStoreService {
       cantidadIngresos,
       cantidadEgresos
     })
+
+    this.hideForm()
+
   }
 
-  //UI
+  //ITEM SELECCIONADO
   seleccionarItem(index:number){
     const item = this._balanceSource.getValue().items[index]
     this._itemActualSource.next({
       item,
       index
     })
-
+    this.showForm()
+    
     console.log({state:{
       balance:this._balanceSource.getValue(),
       itemActual:this._itemActualSource.getValue(),
     }})
   }
-
   resetItemSeleccionado(){
     this._itemActualSource.next({
      item: new BalanceItem,
@@ -109,7 +123,17 @@ export class BalanceStoreService {
     })
   }
 
- private calcularMontos(items:BalanceItem[]){
+  //FORM
+  showForm(){
+    this._showFormSource.next(true)
+  }
+  hideForm(){
+    this._showFormSource.next(false)
+  }
+
+
+
+  private calcularMontos(items:BalanceItem[]){
 
     const itemsIngresos = this.getItemsByTipo(items, TiposDeEvento.INGRESOS)
     const itemsEgresos = this.getItemsByTipo(items, TiposDeEvento.EGRESOS)
@@ -129,8 +153,7 @@ export class BalanceStoreService {
      cantidadIngresos,
      cantidadEgresos
    }
- }
-
+  }
   private getCantidadItems(items:BalanceItem[]){
     return items.length
   }

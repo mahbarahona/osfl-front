@@ -20,7 +20,7 @@ export class BalancePageComponent implements OnInit,OnDestroy {
   constructor(public store:BalanceStoreService) { }
 
   ngOnInit(): void {    
-
+    
     this.subs$.add (
       this.nombre_organizacion.valueChanges
       .pipe(
@@ -40,7 +40,10 @@ export class BalancePageComponent implements OnInit,OnDestroy {
   }
   
 
-
+  agregarItem(){
+    this.store.resetItemSeleccionado()
+    this.store.showForm()
+  }
 
   deleteItem(index:number){
       this.store.deleteItem(index)

@@ -20,22 +20,23 @@
             <label for="numdocumento">N° Documento</label>
             <input formControlName="numero_documento" type="text" id="numdocumento">
         </div>
-        <div class="input-control radio-control">
+        <div class=" radio-control">
             <label for="ingreso">Ingreso</label>
             <input formControlName="tipo" type="radio" name="tipo" id="ingreso" value="1">
 
             <label for="egreso">Egreso</label>
             <input formControlName="tipo" type="radio" name="tipo" id="egreso" value="0">
         </div>
-        <div class="input-control radio-control">                
+        <div class=" radio-control">                
             <input formControlName="es_donacion" type="checkbox" name="donacion" id="donacion"> 
             <label for="donacion">es donacion</label>
         </div>
         <div class="actions">
-            <p (click)="deleteItem()" [hidden]="esAgregar">Eliminar</p>
-            <button type="button"     [hidden]="esAgregar" (click)="updateItem()" >Guardar</button>
+            <p (click)="store.hideForm()">volver</p>
+            <p (click)="deleteItem()" *ngIf="!esAgregar">Eliminar</p>
+            <button type="button"     *ngIf="!esAgregar" (click)="updateItem()" >Guardar</button>
 
-            <button type="button"[hidden]="!esAgregar" (click)="addItem()" >Agregar</button>
+            <button type="button"*ngIf="esAgregar" (click)="addItem()" >Agregar</button>
         </div>
     </form>
 </section>
