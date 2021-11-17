@@ -1,7 +1,13 @@
 <article (click)="seleccionarItem()">
-    <p>{{item.titulo}}</p>
-    <p>{{item.descripcion}}</p>
-    <p>{{item.monto}}</p>
-    <p>{{item.tipo}}</p>
+
+    <div class="content">
+        <h3>{{item.titulo}}</h3>
+        <p>{{item.descripcion}}</p>
+        <p>{{item.fecha_evento | date:'date'}}</p>
+    </div>
+    <div class="end monto">
+        <p [ngClass]="{'egreso':item.tipo === 0,'ingreso':item.tipo === 1}">{{item.monto}}</p>
+    </div>
+
     
 </article>

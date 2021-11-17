@@ -1,0 +1,33 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+article{
+
+    display: flex;
+    padding: 1rem;
+    justify-content: space-between;
+    align-items: center;
+
+    
+    border-bottom: 1px solid gray;
+}
+
+.monto{
+    font-weight: bold;
+}
+
+.egreso{
+    color: gray;
+}
+
+.egreso::before{
+    content: '- ';
+}
+
+.ingreso{
+    color: green;
+}
+.ingreso::before{
+    content: '+ ';
+}

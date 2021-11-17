@@ -12,7 +12,7 @@ import {  BalanceStoreService} from '../../store/balance.store';
 })
 export class BalanceItemFormComponent implements OnInit, OnDestroy{
 
-  frm: FormGroup = this.fb.group({})
+  frm: FormGroup = new FormGroup({})
   esAgregar: boolean = true
   subs$:Subscription = new Subscription
   index:number = -1
@@ -20,6 +20,23 @@ export class BalanceItemFormComponent implements OnInit, OnDestroy{
 
   constructor(private fb: FormBuilder, public store: BalanceStoreService) {}
   
+  //FORM CONTROLS
+  get titulo(){
+    return this.frm.get('titulo');
+  }
+  get descripcion(){
+    return this.frm.get('descripcion');
+  }
+  get monto(){
+    return this.frm.get('monto');
+  }
+  get fecha_evento(){
+    return this.frm.get('fecha_evento');
+  }
+  get numero_documento(){
+    return this.frm.get('numero_documento');
+  }
+
   ngOnInit(): void {
     
    this.subs$.add(  
@@ -35,7 +52,7 @@ export class BalanceItemFormComponent implements OnInit, OnDestroy{
       console.log({esAgregar:this.esAgregar})
     }
     ))
-    // this.frm = this.getInitialForm()
+    this.frm = this.getInitialForm()
   }
   
   ngOnDestroy(): void {
@@ -68,11 +85,11 @@ export class BalanceItemFormComponent implements OnInit, OnDestroy{
 
   private getInitialForm() {
     return this.fb.group({
-      titulo: ['caaa', Validators.required],
-      descripcion: ['sesss ', Validators.required],
-      monto: [1000, Validators.required],
+      titulo: ['Pago de cuota', Validators.required],
+      descripcion: ['cuotas mes Abril ', Validators.required],
+      monto: [65000, Validators.required],
       fecha_evento: [new Date(), Validators.required],
-      numero_documento: ['111111', Validators.required],
+      numero_documento: ['abc123', Validators.required],
       tipo: ['1', Validators.required],
       es_donacion: [false, []]
     })

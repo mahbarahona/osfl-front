@@ -19,12 +19,22 @@ form{
     // position: relative;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-evenly;
     padding: 1.3rem;
-    height: 90%;
+    height: 100%;
 }
 
 .actions{
     display: flex;
     justify-content: space-between;
+
+    margin-top: 2rem;
 }
+
+.row{
+    display: flex;
+    gap: 1rem;
+}
+
+
+

@@ -15,11 +15,7 @@
     max-width:425px ;
 }
 
-.header .form-field{
-    display: flex;
-    flex-direction: column;
-    padding: 1rem;
-}
+
 
 
 .resumen{
@@ -65,8 +61,10 @@
     height: 100%;
     border: 1px solid gray;
     overflow-y: scroll;
+    scroll-behavior: smooth;
 
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     
 }
+

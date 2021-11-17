@@ -2,41 +2,104 @@
     <form [formGroup]="frm">
         <div class="input-control">
             <label for="titulo">Titulo</label>
-            <input formControlName="titulo" type="text" id="titulo">
+            <input formControlName="titulo" type="text" id="titulo"
+            [class.valid]="titulo?.valid && (titulo?.dirty || titulo?.touched)"
+            [class.invalid]="titulo?.invalid && (titulo?.dirty || titulo?.touched)">
+
+            <div *ngIf="titulo?.invalid && 
+                        titulo?.errors && 
+                        (titulo?.dirty || titulo?.touched)">
+                <small *ngIf="titulo?.hasError('required')">Debes agregar el titulo </small>
+            </div>
+
         </div>
         <div class="input-control">
             <label for="descripcion">Descripción</label>
-            <input formControlName="descripcion" type="text" id="descripcion">
+            <!-- <input formControlName="descripcion" type="text" id="descripcion"
+            [class.valid]="descripcion?.valid && (descripcion?.dirty || descripcion?.touched)"
+            [class.invalid]="descripcion?.invalid && (descripcion?.dirty || descripcion?.touched)" > -->
+
+            <textarea formControlName="descripcion" 
+                id="descripcion" cols="30" rows="10"
+                [class.valid]="descripcion?.valid && (descripcion?.dirty || descripcion?.touched)"
+                [class.invalid]="descripcion?.invalid && (descripcion?.dirty || descripcion?.touched)"
+            >
+
+            </textarea>
+            <div *ngIf="descripcion?.invalid && 
+                        descripcion?.errors && 
+                        (descripcion?.dirty || descripcion?.touched)">
+                <small *ngIf="descripcion?.hasError('required')">Debes agregar la descripción.</small>
+            </div>
         </div>
-        <div class="input-control">
-            <label for="monto">Monto</label>
-            <input formControlName="monto" type="number" id="monto">
+
+        <div class="row">
+            <div class="input-control" [style.width.px]="100">
+                <label for="monto">Monto</label>
+                <input formControlName="monto" type="number" id="monto"
+                [class.valid]="monto?.valid && (monto?.dirty || monto?.touched)"
+                [class.invalid]="monto?.invalid && (monto?.dirty || monto?.touched)" >
+                <div *ngIf="monto?.invalid && 
+                            monto?.errors && 
+                            (monto?.dirty || monto?.touched)">
+                    <small *ngIf="monto?.hasError('required')">Debes agregar el monto.</small>
+                </div>
+            </div>
+            <div class="input-control " [style.width.%]="100">
+                <label for="numdocumento">N° Documento</label>
+                <input formControlName="numero_documento" type="text" id="numdocumento"
+                [class.valid]="numero_documento?.valid && (numero_documento?.dirty || numero_documento?.touched)"
+                [class.invalid]="numero_documento?.invalid && (numero_documento?.dirty || numero_documento?.touched)" >
+    
+                <div *ngIf="numero_documento?.invalid && 
+                            numero_documento?.errors && 
+                            (numero_documento?.dirty || numero_documento?.touched)">
+                    <small *ngIf="numero_documento?.hasError('required')">Debes agregar el N° documento.</small>
+                </div>
+            </div>
         </div>
+
         <div class="input-control">
             <label for="fecha">Fecha evento</label>
-            <input formControlName="fecha_evento" type="date" id="fecha">
-        </div>
-        <div class="input-control ">
-            <label for="numdocumento">N° Documento</label>
-            <input formControlName="numero_documento" type="text" id="numdocumento">
+            <input formControlName="fecha_evento" type="date" id="fecha"
+            [class.valid]="fecha_evento?.valid && (fecha_evento?.dirty || fecha_evento?.touched)"
+            [class.invalid]="fecha_evento?.invalid && (fecha_evento?.dirty || fecha_evento?.touched)" >
+
+            <div *ngIf="fecha_evento?.invalid && 
+                        fecha_evento?.errors && 
+                        (fecha_evento?.dirty || fecha_evento?.touched)">
+                <small *ngIf="fecha_evento?.hasError('required')">Debes agregar la fecha.</small>
+            </div>
         </div>
         <div class=" radio-control">
-            <label for="ingreso">Ingreso</label>
-            <input formControlName="tipo" type="radio" name="tipo" id="ingreso" value="1">
+            <label for="ingreso">
+                <input formControlName="tipo" type="radio" name="tipo" id="ingreso" value="1">    
+                <div class="content">
+                  <span>Ingreso</span>
+                </div>
+            </label>
 
-            <label for="egreso">Egreso</label>
-            <input formControlName="tipo" type="radio" name="tipo" id="egreso" value="0">
+            <label for="egreso">
+                <input formControlName="tipo" type="radio" name="tipo" id="egreso" value="0">
+                <div class="content">
+                    <span>Egreso</span>
+                  </div>
+            </label>
+            
+            
+            
         </div>
-        <div class=" radio-control">                
-            <input formControlName="es_donacion" type="checkbox" name="donacion" id="donacion"> 
+        <!-- <div class=" radio-control">                
+            <input formControlName="es_donacion" type="checkbox" name="donacion" id="donacion">
+
             <label for="donacion">es donacion</label>
-        </div>
+        </div> -->
         <div class="actions">
             <p (click)="store.hideForm()">volver</p>
             <p (click)="deleteItem()" *ngIf="!esAgregar">Eliminar</p>
             <button type="button"     *ngIf="!esAgregar" (click)="updateItem()" >Guardar</button>
 
-            <button type="button"*ngIf="esAgregar" (click)="addItem()" >Agregar</button>
+            <button type="button"*ngIf="esAgregar" (click)="addItem()" [disabled]="frm.invalid" >Agregar</button>
         </div>
     </form>
 </section>
