@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { BalanceItemFormComponent } from './balance-item-form.component';
+import { ItemPageComponent } from './item-page.component';
 
-describe('BalanceItemFormComponent', () => {
-  let component: BalanceItemFormComponent;
-  let fixture: ComponentFixture<BalanceItemFormComponent>;
+describe('ItemPageComponent', () => {
+  let component: ItemPageComponent;
+  let fixture: ComponentFixture<ItemPageComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ BalanceItemFormComponent ]
+      declarations: [ ItemPageComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(BalanceItemFormComponent);
+    fixture = TestBed.createComponent(ItemPageComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

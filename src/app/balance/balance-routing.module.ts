@@ -1,12 +1,21 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { BalancePageComponent } from './pages/balance-page/balance-page.component';
+import { ItemPageComponent } from './pages/item-page/item-page.component';
 
 const routes: Routes = [
   {
     path:'',
     component:BalancePageComponent
-  }
+  },
+  {
+    path:'item',
+    component:ItemPageComponent
+  },
+  {
+    path:'item/:id',
+    component:ItemPageComponent
+  },
 ];
 
 @NgModule({

@@ -19,10 +19,13 @@ describe('BalanceStoreService', () => {
       const nombre_esperado = 'nueva organizacion'
       let nombre = ''
       service.balance$.subscribe( balance => nombre = balance.nombre_organizacion)
+      
       service.setNombreOrganizacion(nombre_esperado)
       
       expect(nombre).toEqual(nombre_esperado)
     })
+
+
   })
 
 

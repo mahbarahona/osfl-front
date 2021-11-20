@@ -6,6 +6,6 @@ export class BalanceItem{
     fecha_evento:string = ''
     numero_documento:string = ''
     monto:number= 0
-    tipo:number= 0
+    tipo:string= ''
     es_donacion:boolean = false
 }

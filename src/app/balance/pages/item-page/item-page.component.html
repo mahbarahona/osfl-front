@@ -15,10 +15,6 @@
         </div>
         <div class="input-control">
             <label for="descripcion">Descripción</label>
-            <!-- <input formControlName="descripcion" type="text" id="descripcion"
-            [class.valid]="descripcion?.valid && (descripcion?.dirty || descripcion?.touched)"
-            [class.invalid]="descripcion?.invalid && (descripcion?.dirty || descripcion?.touched)" > -->
-
             <textarea formControlName="descripcion" 
                 id="descripcion" cols="30" rows="10"
                 [class.valid]="descripcion?.valid && (descripcion?.dirty || descripcion?.touched)"
@@ -95,10 +91,9 @@
             <label for="donacion">es donacion</label>
         </div> -->
         <div class="actions">
-            <p (click)="store.hideForm()">volver</p>
+            <p (click)="volver()">volver</p>
             <p (click)="deleteItem()" *ngIf="!esAgregar">Eliminar</p>
-            <button type="button"     *ngIf="!esAgregar" (click)="updateItem()" >Guardar</button>
-
+            <button type="button" *ngIf="!esAgregar" (click)="updateItem()" [disabled]="frm.invalid">Guardar</button>
             <button type="button"*ngIf="esAgregar" (click)="addItem()" [disabled]="frm.invalid" >Agregar</button>
         </div>
     </form>

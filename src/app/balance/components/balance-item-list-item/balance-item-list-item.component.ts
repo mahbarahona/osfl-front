@@ -7,18 +7,9 @@ import { BalanceStoreService } from '../../store/balance.store';
   templateUrl: './balance-item-list-item.component.html',
   styleUrls: ['./balance-item-list-item.component.scss']
 })
-export class BalanceItemListItemComponent implements OnInit {
+export class BalanceItemListItemComponent {
 
   @Input() item = new BalanceItem
   @Input() index = -1
-
-  constructor(private store:BalanceStoreService) { }
-
-  ngOnInit(): void {
-  }
-
-  seleccionarItem(){
-    this.store.seleccionarItem(this.index)
-  }
 
 }
