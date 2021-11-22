@@ -45,12 +45,36 @@ input:focus, textarea:focus{
     border-color: red ;
 }
 button{
-    padding:0 0.3rem;
-    min-height: 2rem;
-    border-radius: 10px;
     display: block;
     width: 100%;
+    min-height: 48px;
+    max-height: 72px;
+    
+    padding:0 0.3rem;
+    border-radius: 10px;
+
+    background-color: #54C1C1;
+    color: white;
+    border: none;
+    // transition: all 0.1s;    
 }
+button:active{
+    transform: scale(0.95) ;
+}
+
+button.volver{
+    background: none;
+    // text-decoration: underline;
+    color: gray;
+    font-size: 1rem;
+}
+button.eliminar{
+    background: white;
+    border: 2px solid gray;
+    color: gray;
+}
+
+
 
 .input-control{
     display: flex;

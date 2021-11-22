@@ -96,10 +96,10 @@
                 <label for="donacion">es donacion</label>
             </div> -->
             <div class="actions">
-                <p (click)="volver()">volver</p>
-                <p (click)="deleteItem()" *ngIf="!esAgregar">Eliminar</p>
+                <button type="button" class="volver" (click)="volver()">Volver</button>
+                <button type="button" class="eliminar" *ngIf="!esAgregar" (click)="deleteItem()" >Eliminar</button>
                 <button type="button" *ngIf="!esAgregar" (click)="updateItem()" [disabled]="frm.invalid">Guardar</button>
-                <button type="button"*ngIf="esAgregar" (click)="addItem()" [disabled]="frm.invalid" >Agregar</button>
+                <button type="button" *ngIf="esAgregar"  (click)="addItem()" [disabled]="frm.invalid" >Agregar</button>
             </div>
         </form>
     </section>
