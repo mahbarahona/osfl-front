@@ -2,7 +2,7 @@
 
     <div class="content" [routerLink]="['item',index]">
         <h3>{{item.titulo}}</h3>
-        <p>{{item.descripcion}}</p>
+        <p>{{item.descripcion | textoBreve}}</p>
         <p>{{item.fecha_evento | date:'fullDate'}}</p>
     </div>
     <div class="end monto">

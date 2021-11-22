@@ -81,7 +81,7 @@ export class ItemPageComponent implements OnInit {
   private getInitialForm() {
     return this.fb.group({
       titulo: ['Pago de cuota', Validators.required],
-      descripcion: ['cuotas mes Abril ', Validators.required],
+      descripcion: ['Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolores aliquam obcaecati facilis architecto consequuntur earum neque aspernatur, eum rem atque accusamus dolor sint expedita soluta harum beatae quisquam adipisci quidem? ', Validators.required],
       monto: [65000, Validators.required],
       fecha_evento: [new Date(), Validators.required],
       numero_documento: ['abc123', Validators.required],
