@@ -15,21 +15,21 @@
 
         <section *ngIf="(store.balance$ | async) as balance" >
             <article class="saldo">
-                <h1>{{balance.saldo}}</h1>
+                <h1>{{balance.saldo | monto}}</h1>
                 <p>saldo</p>
             </article>
             <article class="resumen">
                 <div class="tipo-evento">
-                    <p class="cantidad">{{balance.cantidadIngresos}}</p>
+                    <p class="cantidad">{{balance.cantidadIngresos }}</p>
                     <div class="detalle">
-                        <p class="monto">{{balance.totalIngresos}}</p>
+                        <p class="monto">{{balance.totalIngresos | monto}}</p>
                         <p class="texto">ingresos</p>
                     </div>
                 </div>
                 <div class="tipo-evento">
                     <p class="cantidad">{{balance.cantidadEgresos}}</p>
                     <div class="detalle">
-                        <p class="monto">{{balance.totalEgresos}}</p>
+                        <p class="monto">{{balance.totalEgresos | monto}}</p>
                         <p class="texto">egresos</p>
                     </div>
                 </div>

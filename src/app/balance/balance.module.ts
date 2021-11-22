@@ -10,6 +10,7 @@ import { ItemPageComponent } from './pages/item-page/item-page.component';
 import { BalanceStoreService } from './store/balance.store';
 import { BalanceRepositoryService } from './repository/balance-repository.service';
 import { BalanceService } from './controller/balance.service';
+import { SharedModule } from '../shared/shared.module';
 
 
 
@@ -23,7 +24,8 @@ import { BalanceService } from './controller/balance.service';
   imports: [
     CommonModule,
     BalanceRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    SharedModule
   ],
   providers:[
     BalanceStoreService,

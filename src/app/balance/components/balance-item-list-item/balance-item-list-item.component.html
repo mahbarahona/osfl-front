@@ -6,7 +6,7 @@
         <p>{{item.fecha_evento | date:'fullDate'}}</p>
     </div>
     <div class="end monto">
-        <p [ngClass]="{'egreso':item.tipo === '0','ingreso':item.tipo === '1'}">{{item.monto}}</p>
+        <p [ngClass]="{'egreso':item.tipo === '0','ingreso':item.tipo === '1'}">{{item.monto | monto}}</p>
     </div>
     
 </article>
