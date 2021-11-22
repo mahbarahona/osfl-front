@@ -3,12 +3,29 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
+    margin: 0;
+    
+}
+header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    background-color: antiquewhite;
+}
+
 .container{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 
-    height: 100vh;
+    height: 100%;
     padding: 1rem;
 
     min-width: 320px;

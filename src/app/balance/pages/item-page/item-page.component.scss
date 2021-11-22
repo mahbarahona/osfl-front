@@ -1,11 +1,30 @@
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
+    margin: 0;
+    
+}
+header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    background-color: antiquewhite;
+}
+
+.titulo-agregar::after{
+    content: 'Agregar registro';
+}
+.titulo-editar::after{
+    content: 'Editar registro';
+}
+
 .nuevo-evento{
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    background: white;
     width: 100%;
     height: 100%;
-    overflow:hidden;
+
 
     min-width: 320px;
     max-width:425px ;

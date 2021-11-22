@@ -14,8 +14,9 @@ export class ItemPageComponent implements OnInit {
 
   frm: FormGroup = new FormGroup({})
   esAgregar: boolean = true
+  nombre_pagina:string = 'Agregar'
   index:number = -1
-
+  
 
   constructor(
     private route:ActivatedRoute,
@@ -54,6 +55,7 @@ export class ItemPageComponent implements OnInit {
        this.index = parseInt(index)
        this.frm.setValue(item)
        this.esAgregar = false
+       this.nombre_pagina = 'Editar registro'
      }
 
   }

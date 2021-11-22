@@ -1,49 +1,51 @@
+<main>
+    <header>Balance</header>
 
-
-<section class="container">
-    <section class="header">
-        <div class="input-control">
-            <label for="nombre_organizacion">Nombre organizacion</label>
-            <input type="text" id="nombre_organizacion" [formControl]="nombre_organizacion">
-        </div>
-        <div class="input-control">
-            <label for="fecha_balance">Fecha Balance</label>
-            <input type="month" id="fecha_balance" [formControl]="fecha_balance">
-        </div>
-    </section>
-
-    <section *ngIf="(store.balance$ | async) as balance" >
-        <article class="saldo">
-            <h1>{{balance.saldo}}</h1>
-            <p>saldo</p>
-        </article>
-        <article class="resumen">
-            <div class="tipo-evento">
-                <p class="cantidad">{{balance.cantidadIngresos}}</p>
-                <div class="detalle">
-                    <p class="monto">{{balance.totalIngresos}}</p>
-                    <p class="texto">ingresos</p>
-                </div>
+    <section class="container">
+        <section class="header">
+            <div class="input-control">
+                <label for="nombre_organizacion">Nombre organizacion</label>
+                <input type="text" id="nombre_organizacion" [formControl]="nombre_organizacion">
             </div>
-            <div class="tipo-evento">
-                <p class="cantidad">{{balance.cantidadEgresos}}</p>
-                <div class="detalle">
-                    <p class="monto">{{balance.totalEgresos}}</p>
-                    <p class="texto">egresos</p>
-                </div>
+            <div class="input-control">
+                <label for="fecha_balance">Fecha Balance</label>
+                <input type="month" id="fecha_balance" [formControl]="fecha_balance">
             </div>
-            
-        </article>
+        </section>
 
+        <section *ngIf="(store.balance$ | async) as balance" >
+            <article class="saldo">
+                <h1>{{balance.saldo}}</h1>
+                <p>saldo</p>
+            </article>
+            <article class="resumen">
+                <div class="tipo-evento">
+                    <p class="cantidad">{{balance.cantidadIngresos}}</p>
+                    <div class="detalle">
+                        <p class="monto">{{balance.totalIngresos}}</p>
+                        <p class="texto">ingresos</p>
+                    </div>
+                </div>
+                <div class="tipo-evento">
+                    <p class="cantidad">{{balance.cantidadEgresos}}</p>
+                    <div class="detalle">
+                        <p class="monto">{{balance.totalEgresos}}</p>
+                        <p class="texto">egresos</p>
+                    </div>
+                </div>
+                
+            </article>
+
+        </section>
+
+
+
+
+
+        <section class="list-item">
+            <app-balance-item-list></app-balance-item-list>
+        </section>
+
+        <button [routerLink]="'item'">Agregar</button>
     </section>
-
-
-
-
-
-    <section class="list-item">
-        <app-balance-item-list></app-balance-item-list>
-    </section>
-
-    <button [routerLink]="'item'">Agregar</button>
-</section>
+</main>
