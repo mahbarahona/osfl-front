@@ -9,8 +9,6 @@ export class BalanceStoreService {
   private _balanceSource = new BehaviorSubject<Balance>(new Balance)
   public balance$ = this._balanceSource.asObservable()
 
-
-
   constructor() { }
 
 
@@ -40,7 +38,7 @@ export class BalanceStoreService {
   addItem(item:BalanceItem){
     
     const balance = this._balanceSource.getValue()
-    const items = [...balance.items,item]
+    const items = [item,...balance.items]
     const { totalIngresos,totalEgresos,saldo,cantidadIngresos,cantidadEgresos} = this.calcularMontos(items)
 
 

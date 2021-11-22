@@ -2,8 +2,6 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { Subscription } from 'rxjs';
 import { filter} from 'rxjs/operators'
-import { NavigationService } from 'src/app/core/navigation/navigation.service';
-import { BalanceItem } from '../../models/balance-item.model';
 import { BalanceStoreService } from '../../store/balance.store';
 
 @Component({
@@ -18,9 +16,7 @@ export class BalancePageComponent implements OnInit,OnDestroy {
 
   subs$:Subscription = new Subscription
 
-  constructor( 
-    public store:BalanceStoreService,
-    private nav:NavigationService) { }
+  constructor( public store:BalanceStoreService) { }
 
   ngOnInit(): void {    
     
@@ -42,11 +38,6 @@ export class BalancePageComponent implements OnInit,OnDestroy {
     this.subs$?.unsubscribe()
   }
   
-
-  agregarItem(){
-    this.store.resetItemSeleccionado()
-    this.nav.ir('balance/item')
-  }
 
   deleteItem(index:number){
       this.store.deleteItem(index)

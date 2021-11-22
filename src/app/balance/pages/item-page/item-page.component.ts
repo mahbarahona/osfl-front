@@ -14,8 +14,6 @@ export class ItemPageComponent implements OnInit {
 
   frm: FormGroup = new FormGroup({})
   esAgregar: boolean = true
-  subs$:Subscription = new Subscription
-
   index:number = -1
 
 
@@ -60,11 +58,8 @@ export class ItemPageComponent implements OnInit {
 
   }
   
-  ngOnDestroy(): void {
-    this.subs$?.unsubscribe()
-  }
 
-  addItem() {
+    addItem() {
     this.store.addItem(this.frm.value)
     this.volver()
   }
