@@ -2,7 +2,9 @@
 
 
 
-
+p{
+    margin: 0;
+}
 
 .container{
     display: flex;
@@ -23,12 +25,10 @@
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    // padding: 1rem;
+    padding: 1rem;
 }
 .tipo-evento{
     display: flex;
-
-    align-items: center;
 }
 .tipo-evento .detalle{
     display: flex;
@@ -36,7 +36,7 @@
     justify-content: center;
 }
 .tipo-evento .cantidad{
-    padding: 1rem;
+    padding: 0 0.5rem;
 }
 .detalle .monto{
     font-size: 1rem;
@@ -58,6 +58,10 @@
     font-size: 1.5rem;
 }
 
+.saldo p{
+    margin: 0;
+}
+
 
 .list-item{
     min-height: 10rem;
@@ -67,7 +71,7 @@
     overflow-y: scroll;
     scroll-behavior: smooth;
     
-    border: 1px solid gray;
+    // border: 1px solid gray;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     // border-radius: 10px;
