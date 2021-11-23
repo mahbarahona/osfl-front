@@ -1,5 +1,8 @@
-<app-balance-item-list-item 
+<div class="container">
+
+        <app-balance-item-list-item 
         *ngFor="let item of (store.balance$ | async)?.items ; let i = index"
         [item]="item"
         [index]="i"
-></app-balance-item-list-item>
+        ></app-balance-item-list-item>
+</div>
