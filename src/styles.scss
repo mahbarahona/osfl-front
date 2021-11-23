@@ -73,10 +73,10 @@ button{
     background-color: #54C1C1;
     color: white;
     border: none;
-    // transition: all 0.1s;    
+    transition: all 0.3s;    
 }
 button:active{
-    transform: scale(0.95) ;
+    transform: scale(0.9) ;
 }
 
 button.volver{
@@ -96,6 +96,7 @@ button.eliminar{
 .input-control{
     display: flex;
     flex-direction: column;
+    
 }
 
 .radio-control{

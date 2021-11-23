@@ -9,6 +9,10 @@ header{
     background-color: antiquewhite;
 }
 
+.datos-organizacion .input-control{
+    margin: 1rem 0;
+}
+
 .container{
     display: flex;
     flex-direction: column;
@@ -66,7 +70,7 @@ header{
 
 .list-item{
     min-height: 10rem;
-    height: 15rem;
+    height: 18rem;
     margin-bottom: 1rem;
     
     overflow-y: scroll;
@@ -75,6 +79,7 @@ header{
     border: 1px solid gray;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
+    border-radius: 10px;
     
 }
 
