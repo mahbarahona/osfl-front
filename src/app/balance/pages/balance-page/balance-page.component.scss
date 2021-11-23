@@ -67,10 +67,12 @@ header{
 .list-item{
     min-height: 10rem;
     height: 15rem;
-    border: 1px solid gray;
+    margin-bottom: 1rem;
+    
     overflow-y: scroll;
     scroll-behavior: smooth;
-
+    
+    border: 1px solid gray;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     
