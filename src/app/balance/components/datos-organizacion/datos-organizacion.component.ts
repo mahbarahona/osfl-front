@@ -1,19 +1,19 @@
-import { Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
-import { Subject, Subscription } from 'rxjs';
-import { filter, map, tap} from 'rxjs/operators'
+import { Subscription } from 'rxjs';
+import {  map, tap } from 'rxjs/operators';
 import { BalanceStoreService } from '../../store/balance.store';
 
 @Component({
-  selector: 'app-balance-page',
-  templateUrl: './balance-page.component.html',
-  styleUrls: ['./balance-page.component.scss']
+  selector: 'app-datos-organizacion',
+  templateUrl: './datos-organizacion.component.html',
+  styleUrls: ['./datos-organizacion.component.scss']
 })
-export class BalancePageComponent implements OnInit,OnDestroy {
+export class DatosOrganizacionComponent implements OnInit {
 
   nombre_organizacion = new FormControl('',[Validators.required])
   fecha_balance       = new FormControl('',[Validators.required])
-  subs$:Subscription = new Subscription
+  subs$:Subscription  = new Subscription
 
   constructor( public store:BalanceStoreService) { }
 
@@ -21,7 +21,6 @@ export class BalancePageComponent implements OnInit,OnDestroy {
     this.subs$.add(
       this.store.balance$
       .pipe(
-        filter(balance => balance.nombre_organizacion !== '' &&  balance.fecha_balance !== ''),
         tap(balance => console.log({balance})),
         map(balance =>  {
           
@@ -40,11 +39,5 @@ export class BalancePageComponent implements OnInit,OnDestroy {
   ngOnDestroy(){
     this.subs$?.unsubscribe()
   }
-  
-
-  deleteItem(index:number){
-      this.store.deleteItem(index)
-  }
-
 
 }

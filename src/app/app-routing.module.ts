@@ -10,7 +10,11 @@ const routes: Routes = [
     path:'',
     redirectTo:'balance',
     pathMatch:'full'
-
+  },
+  {
+    path:'**',
+    redirectTo:'',
+    pathMatch:'full'
   }
 ];
 

@@ -1,0 +1,19 @@
+<section class="datos-organizacion" >
+    <div class="input-control">
+        <label for="nombre_organizacion">Nombre de la organización</label>
+        <input type="text" id="nombre_organizacion" 
+            #nombre
+            [formControl]="nombre_organizacion"
+            (blur)="store.setNombreOrganizacion(nombre.value)"
+            >
+    </div>
+    <div class="input-control">
+        <label for="fecha_balance">Fecha Balance</label>
+        <input type="month" id="fecha_balance" 
+            #fecha
+            [formControl]="fecha_balance"
+            (blur)="store.setFechaBalance(fecha.value)"
+        >
+
+    </div>
+</section>

@@ -14,7 +14,6 @@ export class ItemPageComponent implements OnInit {
 
   frm: FormGroup = new FormGroup({})
   esAgregar: boolean = true
-  nombre_pagina:string = 'Agregar'
   index:number = -1
   
 
@@ -55,7 +54,6 @@ export class ItemPageComponent implements OnInit {
        this.index = parseInt(index)
        this.frm.setValue(item)
        this.esAgregar = false
-       this.nombre_pagina = 'Editar registro'
      }
 
   }
@@ -76,7 +74,7 @@ export class ItemPageComponent implements OnInit {
 
 
   volver(){
-    this.nav.ir('/balance')
+    this.nav.ir('/balance/home')
   }
   private getInitialForm() {
     return this.fb.group({

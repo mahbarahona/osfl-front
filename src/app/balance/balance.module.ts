@@ -4,13 +4,15 @@ import { CommonModule } from '@angular/common';
 import { BalanceRoutingModule } from './balance-routing.module';
 import { BalancePageComponent } from './pages/balance-page/balance-page.component';
 import { BalanceItemListComponent } from './components/balance-item-list/balance-item-list.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BalanceItemListItemComponent } from './components/balance-item-list-item/balance-item-list-item.component';
 import { ItemPageComponent } from './pages/item-page/item-page.component';
 import { BalanceStoreService } from './store/balance.store';
 import { BalanceRepositoryService } from './repository/balance-repository.service';
 import { BalanceService } from './controller/balance.service';
 import { SharedModule } from '../shared/shared.module';
+import { DatosOrganizacionComponent } from './components/datos-organizacion/datos-organizacion.component';
+import { LandingPageComponent } from './pages/landing-page/landing-page.component';
 
 
 
@@ -19,12 +21,15 @@ import { SharedModule } from '../shared/shared.module';
     BalancePageComponent,
     BalanceItemListComponent,
     BalanceItemListItemComponent,
-    ItemPageComponent
+    ItemPageComponent,
+    DatosOrganizacionComponent,
+    LandingPageComponent
   ],
   imports: [
     CommonModule,
     BalanceRoutingModule,
     ReactiveFormsModule,
+    FormsModule,
     SharedModule
   ],
   providers:[

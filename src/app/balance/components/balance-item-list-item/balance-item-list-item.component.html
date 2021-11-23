@@ -1,6 +1,6 @@
 <article >
 
-    <div class="content" [routerLink]="['item',index]">
+    <div class="content" [routerLink]="['/balance/item',index]">
         <h3>{{item.titulo}}</h3>
         <p>{{item.descripcion | textoBreve}}</p>
         <p>{{item.fecha_evento | date:'fullDate'}}</p>
