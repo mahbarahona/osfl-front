@@ -21,6 +21,11 @@ const routes: Routes = [
     path:'item/:id',
     component:ItemPageComponent
   },
+  {
+    path:'**',
+    redirectTo:'',
+    pathMatch:'full'
+  },
 ];
 
 @NgModule({

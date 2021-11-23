@@ -1,18 +1,20 @@
 .landing{
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-end;
 
 
-    background-color: antiquewhite;
+
     height: 100%;
     padding: 1rem;
 }
 
-header{
-    text-align: center;
-}
+
 
 .intro{
     padding: 1rem;
+}
+
+.landing .intro h3{
+    color: #008b8b;
 }
