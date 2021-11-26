@@ -30,6 +30,11 @@ p{
     background-color: white;
     margin: 1rem 0;
 }
+
+.resumen .tipo-evento:first-child{
+    border-radius: 0;
+    border-right: 1px solid rgba($color: #000000, $alpha: 0.2);
+}
 .tipo-evento{
     display: flex;
     justify-content: center;
