@@ -1,7 +1,7 @@
+import { formatDate } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
-import { Subscription } from 'rxjs';
 import { NavigationService } from 'src/app/core/navigation/navigation.service';
 import { BalanceStoreService } from '../../store/balance.store';
 
@@ -78,8 +78,8 @@ export class ItemPageComponent implements OnInit {
   }
   private getInitialForm() {
     return this.fb.group({
-      titulo: ['Pago de cuota', Validators.required],
-      descripcion: ['Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolores aliquam obcaecati facilis architecto consequuntur earum neque aspernatur, eum rem atque accusamus dolor sint expedita soluta harum beatae quisquam adipisci quidem? ', Validators.required],
+      titulo: ['Saldo anterior', Validators.required],
+      descripcion: ['Saldo del mes de Octubre', Validators.required],
       monto: [65000, Validators.required],
       fecha_evento: [new Date(), Validators.required],
       numero_documento: ['abc123', Validators.required],
