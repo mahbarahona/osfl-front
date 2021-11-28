@@ -1,7 +1,7 @@
 
 
     <!-- <header>{{nombre_pagina}}</header> -->
-    <header [ngClass]="{'titulo-agregar':esAgregar,'titulo-editar':!esAgregar}"></header>
+    <header [ngClass]="{'titulo-agregar info':esAgregar,'titulo-editar warn':!esAgregar}"></header>
 
     <section class="nuevo-evento" >
         <form [formGroup]="frm">
@@ -98,8 +98,8 @@
             <div class="actions">
                 <button type="button" class="volver" (click)="volver()">Volver</button>
                 <button type="button" class="eliminar" *ngIf="!esAgregar" (click)="deleteItem()" >Eliminar</button>
-                <button type="button" *ngIf="!esAgregar" (click)="updateItem()" [disabled]="frm.invalid">Guardar</button>
-                <button type="button" *ngIf="esAgregar"  (click)="addItem()" [disabled]="frm.invalid" >Agregar</button>
+                <button type="button"  class="warn" *ngIf="!esAgregar" (click)="updateItem()" [disabled]="frm.invalid">Guardar</button>
+                <button type="button" class="info" *ngIf="esAgregar"  (click)="addItem()" [disabled]="frm.invalid" >Agregar</button>
             </div>
         </form>
     </section>

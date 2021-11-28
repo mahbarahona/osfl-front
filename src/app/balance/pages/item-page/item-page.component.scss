@@ -1,5 +1,15 @@
 
 
+.info{
+    background-color: #4767C1;
+    color: white;
+}
+
+.warn{
+    background-color: #e9cf3a;
+    color: rgba($color: #000000, $alpha: 1); 
+}
+
 
 .titulo-agregar::after{
     content: 'Nuevo registro';
