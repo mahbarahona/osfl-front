@@ -12,6 +12,15 @@ export class BalanceStoreService {
   constructor() { }
 
 
+  //PREFERENCES
+  getLastTipoItem(){
+    const items = this._balanceSource.getValue().items
+    console.log({items})
+
+    if(items && items.length > 0 ) return items[0].tipo 
+    return '1'
+  }
+
   getItemByIndex(index:string){
     const i  = parseInt(index)
     const items = this._balanceSource.getValue().items

@@ -83,7 +83,7 @@ export class ItemPageComponent implements OnInit {
       monto: [65000, Validators.required],
       fecha_evento: [new Date(), Validators.required],
       numero_documento: ['abc123', Validators.required],
-      tipo: ['1', Validators.required],
+      tipo: [this.store.getLastTipoItem(), Validators.required],
       es_donacion: [false, []]
     })
   }
