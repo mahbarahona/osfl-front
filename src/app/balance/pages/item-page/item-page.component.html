@@ -63,6 +63,7 @@
             <div class="input-control">
                 <label for="fecha">Fecha evento</label>
                 <input formControlName="fecha_evento" type="date" id="fecha"
+                
                 [class.valid]="fecha_evento?.valid && (fecha_evento?.dirty || fecha_evento?.touched)"
                 [class.invalid]="fecha_evento?.invalid && (fecha_evento?.dirty || fecha_evento?.touched)" >
 

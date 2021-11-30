@@ -12,7 +12,7 @@ import { BalanceStoreService } from '../../store/balance.store';
 export class DatosOrganizacionComponent implements OnInit {
 
   nombre_organizacion = new FormControl('',[Validators.required])
-  fecha_balance       = new FormControl('',[Validators.required])
+  fecha_balance       = new FormControl(this.getDefaultDate(),[Validators.required])
   subs$:Subscription  = new Subscription
 
   constructor( public store:BalanceStoreService) { }
@@ -32,12 +32,21 @@ export class DatosOrganizacionComponent implements OnInit {
       )
       .subscribe( data =>{
         this.nombre_organizacion.setValue(data.nombre_organizacion)
-        this.fecha_balance.setValue(data.fecha_balance)
+        if(data.fecha_balance) this.fecha_balance.setValue(data.fecha_balance)
+        
       })
     )
   }
   ngOnDestroy(){
     this.subs$?.unsubscribe()
   }
+
+  private getDefaultDate(){
+    const dt = new Date()
+    const year = dt.getFullYear()
+    const month = dt.getMonth()
+    return `${year}-${month}`
+  }
+
 
 }

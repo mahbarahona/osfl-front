@@ -1,12 +1,16 @@
 <article >
 
     <div class="content" [routerLink]="['/balance/item',index]">
-        <h3>{{item.titulo}}</h3>
-        <p>{{item.descripcion | textoBreve}}</p>
-        <p>{{item.fecha_evento | date:'fullDate'}}</p>
+        <h3 data-test="titulo">{{ item.titulo || '' }}</h3>
+        <p data-test="descripcion">{{item.descripcion || '' | textoBreve}}</p>
+        <p data-test="fecha">{{item.fecha_evento || '' | date:'shortDate'}}</p>
     </div>
+
     <div class="end monto">
-        <p [ngClass]="{'egreso':item.tipo === '0','ingreso':item.tipo === '1'}">{{item.monto | monto}}</p>
+        <p data-test="monto" 
+            [ngClass]="{'egreso':item.tipo === '0','ingreso':item.tipo === '1'}">
+            {{item.monto || '' | monto}}
+        </p>
     </div>
     
 </article>

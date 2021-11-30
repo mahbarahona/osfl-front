@@ -1,6 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { BalanceItem } from '../../models/balance-item.model';
-import { BalanceStoreService } from '../../store/balance.store';
 
 @Component({
   selector: 'app-balance-item-list-item',

@@ -21,7 +21,7 @@ export class BalancePageComponent implements OnInit,OnDestroy {
     this.subs$.add(
       this.store.balance$
       .pipe(
-        filter(balance => balance.nombre_organizacion !== '' &&  balance.fecha_balance !== ''),
+        filter(balance => balance.nombre_organizacion !== '' ),
         tap(balance => console.log({balance})),
         map(balance =>  {
           
