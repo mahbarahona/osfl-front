@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, Validators } from '@angular/forms';
 import { NavigationService } from 'src/app/core/navigation/navigation.service';
+import { BalanceStoreService } from '../../store/balance.store';
 
 @Component({
   selector: 'app-landing-page',
@@ -8,7 +10,13 @@ import { NavigationService } from 'src/app/core/navigation/navigation.service';
 })
 export class LandingPageComponent implements OnInit {
 
-  constructor(private nav:NavigationService) { }
+  nombre_organizacion = new FormControl('',[Validators.required])
+
+
+
+  constructor(
+    public store:BalanceStoreService,
+    private nav:NavigationService) { }
 
   ngOnInit(): void {
   }

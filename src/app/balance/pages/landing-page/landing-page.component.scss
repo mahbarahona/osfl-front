@@ -18,3 +18,11 @@
 .landing .intro h3{
     color: #008b8b;
 }
+
+
+.actions{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: space-between;
+}
