@@ -12,7 +12,7 @@ import { BalanceStoreService } from '../../store/balance.store';
 export class DatosOrganizacionComponent implements OnInit {
 
   nombre_organizacion = new FormControl('',[Validators.required])
-  fecha_balance       = new FormControl(this.getDefaultDate(),[Validators.required])
+  fecha_balance       = new FormControl(this.store.getDefaultFechaBalance(),[Validators.required])
   subs$:Subscription  = new Subscription
 
   constructor( public store:BalanceStoreService) { }
@@ -41,12 +41,7 @@ export class DatosOrganizacionComponent implements OnInit {
     this.subs$?.unsubscribe()
   }
 
-  private getDefaultDate(){
-    const dt = new Date()
-    const year = dt.getFullYear()
-    const month = dt.getMonth()
-    return `${year}-${month}`
-  }
+
 
 
 }

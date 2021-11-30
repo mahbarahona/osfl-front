@@ -43,6 +43,7 @@ export class ItemPageComponent implements OnInit {
   ngOnInit(): void {
     const index = this.route.snapshot.paramMap.get('id') || ''
     this.frm = this.getInitialForm()
+    console.log(this.frm.value)
 
      if(index)
      {
@@ -81,7 +82,7 @@ export class ItemPageComponent implements OnInit {
       titulo: ['Saldo anterior', Validators.required],
       descripcion: ['Saldo del mes de Octubre', Validators.required],
       monto: [65000, Validators.required],
-      fecha_evento: [new Date(), Validators.required],
+      fecha_evento: [this.store.getFechaEvento(), Validators.required],
       numero_documento: ['abc123', Validators.required],
       tipo: [this.store.getLastTipoItem(), Validators.required],
       es_donacion: [false, []]

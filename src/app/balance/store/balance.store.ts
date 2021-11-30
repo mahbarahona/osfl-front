@@ -15,11 +15,37 @@ export class BalanceStoreService {
   //PREFERENCES
   getLastTipoItem(){
     const items = this._balanceSource.getValue().items
-    console.log({items})
+    // console.log({items})
 
     if(items && items.length > 0 ) return items[0].tipo 
     return '1'
   }
+
+  getDefaultFechaBalance(){
+    const dt = new Date()
+    const year = dt.getFullYear()
+    const month = dt.getMonth()
+    return `${year}-${month}`
+  }
+  
+
+
+  private getDefaultFechaEvento(){
+    const dt = new Date()
+    const year = dt.getFullYear()
+    const month = dt.getMonth()
+    // 2021-11-13
+    return `${year}-${month}-01`
+  }
+
+  getFechaEvento(){
+    const items = this._balanceSource.getValue().items
+    // console.log({items})
+
+    if(items && items.length > 0 ) return items[0].fecha_evento 
+    return this.getDefaultFechaEvento()
+  }
+
 
   getItemByIndex(index:string){
     const i  = parseInt(index)
