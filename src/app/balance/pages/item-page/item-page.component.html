@@ -101,7 +101,7 @@
                 <button type="button" class="volver" (click)="volver()">Volver</button>
                 <button type="button" class="eliminar" *ngIf="!esAgregar" (click)="deleteItem()" >Eliminar</button>
                 <button type="button"  class="warn" *ngIf="!esAgregar" (click)="updateItem()" [disabled]="frm.invalid">Guardar</button>
-                <button type="button" class="info" *ngIf="esAgregar"  (click)="addItem()" [disabled]="frm.invalid" >Agregar</button>
+                <button type="button" class="info" *ngIf="esAgregar"  (click)="addItem()" [disabled]="frm.invalid" >Agregar nuevo registro</button>
             </div>
         </form>
     </section>
