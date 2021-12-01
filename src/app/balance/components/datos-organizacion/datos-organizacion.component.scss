@@ -1,5 +1,15 @@
 
-.datos-organizacion{}
-.datos-organizacion .input-control{
+.datos-organizacion{
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
     margin: 1rem 0;
+}
+.datos-organizacion .input-control{
+   width: 60%;
+}
+
+.datos-organizacion .input-control:nth-child(2){
+    width: 100px;
+  
 }

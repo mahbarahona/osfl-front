@@ -10,7 +10,9 @@ import { BalanceStoreService } from '../../store/balance.store';
 })
 export class LandingPageComponent implements AfterViewInit {
 
-  @ViewChild('nombre') nombre:ElementRef = new ElementRef('')
+  @ViewChild('nombre') 
+  nombre:ElementRef = new ElementRef('')
+  
   nombre_organizacion = new FormControl('',[Validators.required])
 
 
