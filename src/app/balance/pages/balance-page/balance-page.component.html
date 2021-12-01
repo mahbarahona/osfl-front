@@ -3,7 +3,9 @@
 
     <section class="container" *ngIf="(store.balance$ | async) as balance" >
         <app-datos-organizacion></app-datos-organizacion>
+        <section class="content">
 
+       
         <ng-container *ngIf="balance.items.length >0; else noitems">
             <section >
                     <article class="saldo">
@@ -43,6 +45,7 @@
                 <p>Sin registros.</p>
             </section>
         </ng-template>
+        </section>
         <section class="actions">
             <button class="btn_btn--descargar">Descargar Balance</button>
             <button class="btn_btn--agregar-registro" [routerLink]="'/balance/item'" >Agregar nuevo registro</button>
