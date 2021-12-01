@@ -73,11 +73,12 @@ p{
 
 .saldo h1{
     margin: 0;
-    font-size: 1.5rem;
+    font-size: 3rem;
 }
 
 .saldo p{
     margin: 0;
+    font-size: 0.7rem;
 }
 
 
@@ -114,9 +115,11 @@ p{
 .actions{
     // display: flex;
     display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
+    // flex-direction: column;
+    // gap: 1.5rem;
     align-items: center;
+    justify-content: space-between;
+    gap: .5rem;
 }
 
 .btn_btn--agregar-registro{
