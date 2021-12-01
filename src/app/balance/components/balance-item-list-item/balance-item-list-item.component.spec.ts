@@ -5,7 +5,7 @@ import { SharedModule } from 'src/app/shared/shared.module';
 
 import { BalanceItemListItemComponent } from './balance-item-list-item.component';
 
-fdescribe('BalanceItemListItemComponent', () => {
+describe('BalanceItemListItemComponent', () => {
   let component: BalanceItemListItemComponent;
   let fixture: ComponentFixture<BalanceItemListItemComponent>;
 

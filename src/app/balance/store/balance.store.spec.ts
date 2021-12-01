@@ -14,7 +14,7 @@ describe('BalanceStoreService', () => {
     expect(service).toBeTruthy();
   });
 
-  describe('setNombreOrganizacion',()=>{
+  xdescribe('setNombreOrganizacion',()=>{
     it('debe asignar el nombre entregado en el store',()=>{
       const nombre_esperado = 'nueva organizacion'
       let nombre = ''

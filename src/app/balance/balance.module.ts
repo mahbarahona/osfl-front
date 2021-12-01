@@ -9,7 +9,7 @@ import { BalanceItemListItemComponent } from './components/balance-item-list-ite
 import { ItemPageComponent } from './pages/item-page/item-page.component';
 import { BalanceStoreService } from './store/balance.store';
 import { BalanceRepositoryService } from './repository/balance-repository.service';
-import { BalanceService } from './controller/balance.service';
+import { BalanceService } from './domain/balance.service';
 import { SharedModule } from '../shared/shared.module';
 import { DatosOrganizacionComponent } from './components/datos-organizacion/datos-organizacion.component';
 import { LandingPageComponent } from './pages/landing-page/landing-page.component';

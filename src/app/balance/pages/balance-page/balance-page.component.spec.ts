@@ -27,7 +27,7 @@ describe('BalancePageComponent', () => {
 
 
   
-  describe('CRUD items',()=>{
+  xdescribe('CRUD items',()=>{
 
     it('agregar item',()=>{
 
@@ -74,7 +74,7 @@ describe('BalancePageComponent', () => {
 
   })
 
-  describe('datos organizacion',()=>{
+  xdescribe('datos organizacion',()=>{
     it(' agregar nombre de la organizacion',()=>{})
     it(' editar nombre de la organizacion',()=>{})
 
