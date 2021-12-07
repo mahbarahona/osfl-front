@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
+import {  Component,  Input } from '@angular/core';
 import { BalanceItem } from '../../models/balance-item.model';
 
 @Component({
