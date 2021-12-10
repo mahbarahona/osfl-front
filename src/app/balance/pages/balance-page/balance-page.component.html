@@ -35,7 +35,11 @@
                     <p>Lista de registros</p>
                 </div>
                 <div class="list-item">
-                    <app-balance-item-list></app-balance-item-list>
+                    <app-balance-item-list-item 
+                    *ngFor="let item of (store.balance$ | async)?.items ; let i = index"
+                    [item]="item"
+                    [index]="i"
+            ></app-balance-item-list-item>
                 </div>
             </section>
         </ng-container>
@@ -47,8 +51,7 @@
         </ng-template>
         </section>
         <section class="actions">
-            <button class="btn_btn--descargar">Descargar Balance</button>
-            <button class="btn_btn--agregar-registro" [routerLink]="'/balance/item'" >Agregar nuevo registro</button>
-
+            <button class="btn_btn--descargar" data-testid="btn_descargar-balance">Descargar Balance</button>
+            <button class="btn_btn--agregar-registro" data-testid="btn_agregar-item" [routerLink]="'/balance/item'" >Agregar nuevo registro</button>
         </section>
     </section>

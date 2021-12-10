@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 
 import { BalanceRoutingModule } from './balance-routing.module';
 import { BalancePageComponent } from './pages/balance-page/balance-page.component';
-import { BalanceItemListComponent } from './components/balance-item-list/balance-item-list.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BalanceItemListItemComponent } from './components/balance-item-list-item/balance-item-list-item.component';
 import { ItemPageComponent } from './pages/item-page/item-page.component';
@@ -19,7 +18,6 @@ import { LandingPageComponent } from './pages/landing-page/landing-page.componen
 @NgModule({
   declarations: [
     BalancePageComponent,
-    BalanceItemListComponent,
     BalanceItemListItemComponent,
     ItemPageComponent,
     DatosOrganizacionComponent,

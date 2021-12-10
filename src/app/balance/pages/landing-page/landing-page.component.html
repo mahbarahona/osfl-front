@@ -7,10 +7,10 @@
         <p>Rápido y Fácil</p>
     </article>
     <article class="actions">
-        <!-- <app-datos-organizacion></app-datos-organizacion> -->
         <div class="input-control">
             <label for="nombre_organizacion">Nombre de la organización</label>
             <input type="text" id="nombre_organizacion" 
+                data-testid="input_nombre-organizacion"
                 #nombre
                 [formControl]="nombre_organizacion"
                 (blur)="store.setNombreOrganizacion(nombre.value)"    
@@ -18,6 +18,6 @@
                 >
         </div>
 
-        <button (click)="comenzar()">Agregar nuevo registro</button>
+        <button (click)="comenzar()" data-testid="btn">Agregar nuevo registro</button>
     </article>
 </section>
